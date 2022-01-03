@@ -1,32 +1,29 @@
 package com.psephoi.mvc.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+@Entity (name= "Poll")
 public class Poll {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 
 	private long id;
-	
+
 	private String pollname;
-	
+
 	private String description;
-	
+
 	private String choice1;
-	
+
 	private String choice2;
 	
 	private String email;
 	
-	public Poll(){
-		id=0;
-	}
-	
-	public Poll(long id, String pollname, String description, String choice1, String choice2, String email){
-		this.id = id;
-		this.pollname = pollname;
-		this.description = description;
-		this.choice1 = choice1;
-		this.choice2 = choice2;
-		this.email = email;
-	}
-
 	public long getId() {
 		return id;
 	}
@@ -73,35 +70,5 @@ public class Poll {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 89;
-		int result = 1;
-		result = prime * result + (int) (id ^ (id >>> 89));
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (!(obj instanceof Poll))
-			return false;
-		Poll other = (Poll) obj;
-		if (id != other.id)
-			return false;
-		return true;
-	}
-
-	@Override
-	public String toString() {
-		return "Poll [id=" + id + ", pollname=" + pollname + ", description=" + description
-				+ ", choice1=" + choice1 + ':' + ", choice2=" + choice2 + ':' + ", email=" + email + "]";
-	}
-	
-
 	
 }
