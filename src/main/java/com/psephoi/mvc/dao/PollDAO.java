@@ -1,13 +1,11 @@
-package com.psephoi.mvc.service;
+package com.psephoi.mvc.dao;
 
 import java.util.List;
 
 import com.psephoi.mvc.model.Poll;
 
 
-
-public interface PollService {   
-
+public interface PollDAO {
 	
 	long save(Poll poll);
 	
