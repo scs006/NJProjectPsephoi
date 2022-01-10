@@ -5,7 +5,7 @@
     <title>Psephoi Polling App</title>  
     <style>
       .pollname.ng-valid {
-          background-color: green;
+          background-color: light-green;
       }
       .pollname.ng-dirty.ng-invalid-required {
           background-color: red;
@@ -31,7 +31,8 @@
   <body ng-app="myApp" class="ng-cloak">
       <div class="generic-container text-center" ng-controller="PollController as ctrl">
           <div class="panel panel-default">
-              <div class="d-flex justify-content-center"><span class="lead">Poll Registration Form </span></div>
+              <div class="d-flex justify-content-center"><span class="lead">Psephoi Poll Creation</span></div>
+              <div class="d-flex justify-content-center"><span class="lead">Welcome ${userForm.username}!</span></div>
               <div class="formcontainer text-center">
                   <form ng-submit="ctrl.submit()" name="myForm" class="form-horizontal">
                       <input type="hidden" ng-model="ctrl.poll.id" />
